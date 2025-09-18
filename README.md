@@ -86,7 +86,7 @@ The following figure shows the results of the Regressor model with the respectiv
 > git clone https://github.com/EdwardWardell02/Random-Forest-Model-applied-to-the-Stock-Market.git
 2.  Install dependencies
 > pip install -r requirements.txt
-3. Set your Alpha Vantage API key in `app/data_loader.py`.
+3. Set your Alpha Vantage API key in `app/data_loader.py`. \
 \
 4. Run application:
 > streamlit run main.py
