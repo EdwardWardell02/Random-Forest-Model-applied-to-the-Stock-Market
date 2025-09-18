@@ -22,7 +22,8 @@ Stock_Model/ \
 ├── README.md \
 
 ---
-## The Project
+## The Project 
+
 Interactive financial analysis dashboard featuring custom Random Forest models (RFM) for stock &amp; forex prediction. Compares performance of personally made RFM against sklearn with visualisations, technical indicators, and Alpha Vantage integration, along with Analysis of results of classifier or regressor models.
 ---
 
