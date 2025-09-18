@@ -4,21 +4,21 @@ THis project includes code that was developed from scratch to make Random Forest
 
 The structure of the files are as follows:
 Stock_Model/
-├── app/
-│   ├── data_loader.py
-│   ├── data_processor.py
-│   ├── update_visualiser.py
-│   ├── Random_Forest_Model_Classifier.py
-│   └── Random_Forest_Model_Regressor.py
-├── data/
-│   └── (cached data files from Alpha Vantage)
-├── images/
-│   ├── dashboard-overview.png
-│   ├── market-data-tab.png
-│   └── (other screenshots)
-├── main.py
-├── requirements.txt
-├── README.md
+├── app/ \
+│   ├── data_loader.py \
+│   ├── data_processor.py \
+│   ├── update_visualiser.py \
+│   ├── Random_Forest_Model_Classifier.py \
+│   └── Random_Forest_Model_Regressor.py \
+├── data/ \
+│   └── (cached data files from Alpha Vantage) \
+├── images/ \
+│   ├── dashboard-overview.png \
+│   ├── market-data-tab.png \
+│   └── (other screenshots) \
+├── main.py \
+├── requirements.txt \
+├── README.md \
 
 ---
 ## The Project
