@@ -46,7 +46,7 @@ Here the chosen model is trained on the data selected by the user.
 * __Feature Selection__: Choose from technical indicators and price data.(see Figure 4)
 * __Feature Evaluation__: Correlation and scatter matrices are displayed for selected features. (see Figure 5 & 6)
 * __Hyperparameter Tuning__: Adjust model parameters through sliders. (see Figure 7)
-The window slider is because the RFM work through bootstrapping, as this is a forecasting problem, the base learners are trained individually on windows of the dataset instead of random sampling. (see Figure 8)
+The window slider is because the RFM work through bootstrapping, as this is a forecasting problem, the base learners are trained individually on windows of the dataset instead of random sampling. This dashboard shows two of these bootstrapping windows (see Figure 8)
 ![ML](Stock_model/images/ML_Model_Page.PNG)
 #### Figure 3
 ![ML](Stock_model/images/ML_Model_Page_Features.PNG)
@@ -61,3 +61,14 @@ The window slider is because the RFM work through bootstrapping, as this is a fo
 #### Figure 8
 ---
 ### Perfomance of RFM
+* __Benchmarking__: These custom models are compared to the scikit-learn implementations.
+* __Metrics__: Depending on the model used (either Classifier or Regressor) the metrics are evaluated for the RFM. \
+\
+---
+The following figure shows the results of the Classifier model with the respective metrics and visualisations outputted.
+![Classifier](Stock_model/images/ML_Model_Page_Classifier_Results.PNG)
+#### Figure 9
+---
+The following figure shows the results of the Regressor model with the respective metrics and visualisations outputted.
+![Regressor](Stock_model/images/ML_Model_Page_Regressor.PNG)
+---
