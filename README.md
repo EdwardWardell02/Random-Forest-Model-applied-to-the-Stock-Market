@@ -28,5 +28,4 @@ Interactive financial analysis dashboard featuring custom Random Forest models (
 ---
 ### Main Dashboard
 ![Main Dashboard](Stock_model/images/Front_Page.PNG)
-
-This dashboard is the emalgimation of two different projects, RFM classifier and RFM regressor.
+*__Real-Time Data__: Fetch and then visualise stock/forex data from Alpha Vantage API.
