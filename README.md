@@ -29,4 +29,4 @@ Interactive financial analysis dashboard featuring custom Random Forest models (
 ---
 ### Main Dashboard
 ![Main Dashboard](Stock_model/images/Front_Page.PNG)
-*__Real-Time Data__: Fetch and then visualise stock/forex data from Alpha Vantage API.
+* __Real-Time Data__: Fetch and then visualise stock/forex data from Alpha Vantage API.
