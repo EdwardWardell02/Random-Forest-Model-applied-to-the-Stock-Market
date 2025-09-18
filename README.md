@@ -72,3 +72,7 @@ The following figure shows the results of the Classifier model with the respecti
 The following figure shows the results of the Regressor model with the respective metrics and visualisations outputted.
 ![Regressor](Stock_model/images/ML_Model_Page_Regressor.PNG)
 ---
+\
+\
+# Technical Architecture
+
