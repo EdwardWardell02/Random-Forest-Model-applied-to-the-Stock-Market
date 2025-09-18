@@ -87,6 +87,6 @@ The following figure shows the results of the Regressor model with the respectiv
 2.  Install dependencies
 > pip install -r requirements.txt
 3. Set your Alpha Vantage API key in `app/data_loader.py`. \
-\
+
 4. Run application:
 > streamlit run main.py
