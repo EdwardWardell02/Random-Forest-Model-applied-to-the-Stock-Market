@@ -73,6 +73,19 @@ The following figure shows the results of the Regressor model with the respectiv
 ![Regressor](Stock_model/images/ML_Model_Page_Regressor.PNG)
 ---
 \
-\
-# Technical Architecture
 
+# Technical Architecture
+* __Frontend__: Streamlit with custom CSS styling
+* __Machine Learning__: Custom Random Forest Classifier and Regressor with optimised selection quality selection and bootstrapping.
+* __Data Processing__: Pandas, NumPy for technical indators.
+* __Visualisation__: Plotly for interactive charts, Matplotlib for metrics.
+* __Data Source__: Alpha Vantage (AV) Stock Market API with local caching (data is stored to .csv's because of maximum of 25 API requests per day limit from AV.
+---
+# Installation
+1. Clone the repository:
+> git clone https://github.com/EdwardWardell02/Random-Forest-Model-applied-to-the-Stock-Market.git
+2.  Install dependencies
+> pip install -r requirements.txt
+3. Set your Alpha Vantage API key in `app/data_loader.py`.
+4. Run application:
+> streamlit run main.py
