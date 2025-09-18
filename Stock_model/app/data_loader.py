@@ -11,7 +11,7 @@ DATA_DIR = "data"
 if not os.path.exists(DATA_DIR):
     os.makedirs(DATA_DIR)
 
-ALPHA_VANTAGE_API_KEY = "D8NZVFIM53WG653X"
+ALPHA_VANTAGE_API_KEY = "ENTER ALPHA VINTAGE API KEY HERE"
 
 def get_stock_filename(ticker):
     return os.path.join(DATA_DIR, f"{ticker}.csv")
