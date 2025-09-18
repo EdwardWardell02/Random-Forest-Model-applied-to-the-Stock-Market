@@ -30,3 +30,13 @@ Interactive financial analysis dashboard featuring custom Random Forest models (
 ### Main Dashboard
 ![Main Dashboard](Stock_model/images/Front_Page.PNG)
 * __Real-Time Data__: Fetch and then visualise stock/forex data from Alpha Vantage API.
+One can select what stock to look at, either SP500 or Forex, the time span to look over, and the specific ticker.
+---
+### Market Data Analysis
+![Ticker](Stock_model/images/Front_Page_stock.PNG)
+* __Technical Indicators__: Automatic calculation of MA20, MA50, volatility and, daily returns.
+* __Interactive Charts__: Candlestick charts with zoom and pan functionality.
+---
+### Machine Learning Capabilities
+![ML](Stock_model/images/ML_Model_Page.PNG)
+
