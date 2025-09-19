@@ -1,20 +1,23 @@
+import numpy as np
 import streamlit as st
 import pandas as pd
 from datetime import datetime, timedelta
-from app.data_loader import fetch_stock_data
-from app.data_processor import process_stock_data
-from app.update_visualiser import plot_candlestick, plot_classification_results, plot_regression_results, plot_bootstrap_samples
+
 import plotly.express as px
-import numpy as np
-from app.Random_Forest_Model_Classifier import RandomForestClassifier
-from app.Random_Forest_Model_Regressor import RandomForestRegressor
+import seaborn as sns
+from matplotlib import pyplot as plt
+
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.ensemble import RandomForestRegressor as SklearnRFR
 from sklearn.ensemble import RandomForestClassifier as SklearnRFC
-
 from sklearn.metrics import classification_report, confusion_matrix
-import seaborn as sns
-from matplotlib import pyplot as plt
+
+from app.data_loader import fetch_stock_data
+from app.data_processor import process_stock_data
+from app.update_visualiser import plot_candlestick, plot_classification_results, plot_regression_results, plot_bootstrap_samples
+from app.Random_Forest_Model_Classifier import RandomForestClassifier
+from app.Random_Forest_Model_Regressor import RandomForestRegressor
+
 # Set page configuration with a professional theme
 st.set_page_config(
     page_title="Stock Analysis Dashboard", 
@@ -113,22 +116,25 @@ st.markdown("""
 # Header section
 col1, col2 = st.columns([1, 3])
 with col1:
+    # Add Stock image for a professional look.
     st.image("https://cdn.mos.cms.futurecdn.net/JKqxBpmH3e95tdXXLrNyPZ.jpg", width=300)
 with col2:
     st.title("Stock Analysis Dashboard")
     st.markdown("**Advanced predictive analytics for stock market forecasting**")
 
-# Initialise tabs for stock and forex
+# Initialise tabs for stock and forex.
 if 'selected_tab' not in st.session_state:
     st.session_state.selected_tab = 'SP500'
 
-# Sidebar with enhanced design
+# Sidebar with enhanced design, also allow sidebar to fold in and out.
 with st.sidebar:
     st.markdown('<p class="sidebar-header">Market Selection</p>', unsafe_allow_html=True)
     market_type = st.radio("Select Market:", ["SP500", "Forex"], index=0)
 
+    # Make a safe logic stament for the market type, this helps later 
     st.session_state.selected_tab = market_type
 
+    # Given the market type a select box with the relevant tickers is made. 
     if market_type == "SP500":
         st.markdown('<p class="sidebar-header">Stock Selection</p>', unsafe_allow_html=True)
         stock_tickers = {
@@ -204,7 +210,7 @@ with st.sidebar:
         help="Classifier predicts price direction (up/down), Regressor predicts actual price values."
     )
 
-    # Date calculation
+    # Date calculation (all of the data is from the current date and then back the chosen time span.
     end_date = datetime.today()
     if time_span == "1 Day":
         start_date = end_date - timedelta(days=1)
@@ -236,12 +242,12 @@ with st.sidebar:
     
     st.markdown(f"**Date Range:** {start_date.date()} to {end_date.date()}")
 
-# Fetch and process stock data
+# Fetch and process stock data for the chosen ticker.
 raw_data = fetch_stock_data(ticker_symbol, start_date, end_date)
 
 # Display data and analysis
 if raw_data.empty:
-    st.warning("No data available for the selected stock and time span.")
+    st.warning("No data available for the selected stock and time span or Alpha Vantage API request limit reached.")
 else:
     # Drop any rows with missing values
     raw_data = raw_data.dropna(axis=0, how='any')
@@ -278,7 +284,7 @@ else:
         
         n_samples = len(processed_data)
         
-        # Adjust window size slider based on available data
+        # Adjust window (for bootstrapping window size) size slider based on available data
         max_window = min(100000, n_samples)
         min_window = min(10, n_samples)
         
@@ -292,7 +298,7 @@ else:
             default=['Open', 'High', 'Low', 'Close', 'Volume']
         )
         
-        # Create target variable
+        # Create target variable, different for classifier and regressor (classifier looks to see  the movement is up or down for close and regressor tried to determine the top price of the stock for that day). 
         if model_type == "Classification":
             processed_data['Target'] = (processed_data['Close'].shift(-1) > processed_data['Close']).astype(int)
         else:
@@ -397,7 +403,7 @@ else:
                 criterion = st.radio("Split Criterion", ["gini", "entropy"], index=0)
         
         # Train button
-        if st.button("🚀 Train Model", use_container_width=True):
+        if st.button("Train Model", use_container_width=True):
             if len(selected_features) == 0:
                 st.error("Please select at least one feature for the model.")
             else:
