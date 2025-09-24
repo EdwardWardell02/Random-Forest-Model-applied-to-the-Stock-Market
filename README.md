@@ -1,6 +1,7 @@
 # Random-Forest-Model-applied-to-the-Stock-Market
 
 THis project includes code that was developed from scratch to make Random Forest models (RFM), including a Classifier with replacement spliting criteria (Gini or Entropy) and a Regressor model for continuous price evaluation. 
+THe code uses streamlit for an interactive dashboard.
 
 The structure of the files are as follows: \
 \
